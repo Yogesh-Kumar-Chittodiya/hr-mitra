@@ -1,0 +1,53 @@
+<div class="col-lg-12">
+<%#= flash :notice %>
+<div class="card  mb-5 rounded-0" style="background:linear-gradient(white,skyblue,white)">
+    <div class="card-body">
+        <h2 class="text-center" style="">Listing Employee</h2>
+        <%#<marquee direction="right" behavior="scroll" scrollamount="5"></marquee>%>
+    </div>
+</div>
+
+<%= link_to 'Create New Employee', new_employee_path, class: 'btn btn-primary btn-lg mb-4 rounded-0', style: 'text-decoration: none;' %>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @employees.each do |employee| %>
+            <tr>
+                <td class="col-2"><%= employee.name %></td>
+                <td class="col-2"><%= employee.personal_email %></td>
+                <td class="col-4"><%= employee.full_address %></td>
+                <td>
+
+                    <!--    <div class="dropdown">
+                        <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Actions
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><%#= link_to 'Edit', edit_employee_path(employee), class: 'dropdown-item' %></li>
+                            <li><%#= link_to 'View', employee_path(employee), class: 'dropdown-item' %></li>
+                            <li><%#= link_to 'Delete', employee_path(employee), class: 'dropdown-item', method: :delete, data: { confirm: 'Are you sure to delete this employee?'} %></li>
+                        </ul>
+                    </div>-->
+                    
+                    <%= link_to 'Edit', edit_employee_path(employee), class: 'btn btn-primary' %>
+                    <%= link_to 'View', employee_path(employee), class: 'btn btn-info' %>
+                    <%= link_to 'Delete', employee_path(employee), class: 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure to delete this employee?'} %>
+                    <%= link_to 'Documents', employee_path(employee), class: 'btn btn-info' %>
+                    
+                </td>
+            </tr>
+        
+        <% end %>
+    </tbody>
+
+</table>
+</div >
+
+

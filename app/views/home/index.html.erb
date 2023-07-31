@@ -1,0 +1,41 @@
+<div>
+    <marquee behavior="scroll" direction="right" bgcolor="white" scrollamount="3" >
+        <h3 class="text-center text-danger">Welcome User! (why marquee is not working? kindly resolve.)</h3>
+    </marquee>
+</div>
+
+
+<div class="container" style="height:65vh">
+    <h1>Hello World!</h1>
+    <h2>I'm here.</h2>
+
+    <h1><%= @title_text %></h1>
+    <h2><%= @sub_title_text %></h2>
+</div>
+
+
+<%#= link_to 'About us', controller: :pages, action: :about_us %>
+<%#= link_to "About us", "/about" %>
+<%#= link_to nil, about_path %>
+
+<%#= render 'shared/links' %>
+
+
+<%
+=begin%>
+<% if @employee.errors.any? %>
+            <div class="col-lg-12">
+                <p class="lead">Please fix errors below</p>
+                <% @employee.errors.full_messages.each do |message| %>
+                    <p class="text-danger"><%= message %></p>
+                <% end %>
+            </div>
+        <% end %> 
+<%
+=end%>
+
+
+<%#Splash Screen code%>
+<div id="splash" class="splash" onclick="spl()">
+    <h1 class="splash-header">Welcome to the Hr-Mitra!!!</h1>
+</div>
